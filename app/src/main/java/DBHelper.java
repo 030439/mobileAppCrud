@@ -79,7 +79,13 @@ public class DBHelper extends SQLiteOpenHelper
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor currentRecord=DB.rawQuery("SELECT * FROM crudApp WHERE Name=?",new String[]{name});
         if(currentRecord.getCount()>0){
-            int result=DB.delete("kcrudApp","Name=?",new String[]{name});
+            int result=DB.delete("crudApp","Name=?",new String[]{name});
+            if(result==-1){
+                return  false;
+            }
+            else{
+                return  true;
+            }
         }
     }
 
