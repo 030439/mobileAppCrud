@@ -21,7 +21,30 @@ public class DBHelper extends SQLiteOpenHelper
     public void onUpgrade(SQLiteDatabase DB, int i, int i1) {
     DB.execSQL("drop table if exists crudApp");
     }
+    //Insert method
     public boolean insertData(String name,String contact,String dob){
+        //get database connection
+        SQLiteDatabase DB=this.getWritableDatabase();
+
+        //write content in database
+        ContentValues contentvalues=new ContentValues();
+
+        //assign values to content
+        contentvalues.put("Name",name);
+        contentvalues.put("Conctact",contact);
+        contentvalues.put("DOB",dob);
+
+        //execute the insert query
+        Long result=DB.insert("crudApp",null,contentvalues);
+        if(result==-1){
+            return  false;
+        }
+        else{
+            return  true;
+        }
+    }
+    //Update method
+    public boolean updateData(String name,String contact,String dob){
         //get database connection
         SQLiteDatabase DB=this.getWritableDatabase();
 
