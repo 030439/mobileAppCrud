@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -24,5 +25,13 @@ public class MainActivity extends AppCompatActivity {
         btnInsert=findViewById(R.id.update);
         btnInsert=findViewById(R.id.view);
         btnInsert=findViewById(R.id.delete);
+        btnInsert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name=txtName.getText().toString();
+                String Contact=txtContact.getText().toString();
+                String dob=txtDob.getText().toString();
+            }
+        });
     }
 }
