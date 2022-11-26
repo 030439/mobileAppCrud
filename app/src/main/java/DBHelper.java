@@ -22,7 +22,10 @@ public class DBHelper extends SQLiteOpenHelper
     DB.execSQL("drop table if exists crudApp");
     }
     public boolean insertData(String name,String contact,String dob){
+        //get database connection
         SQLiteDatabase DB=this.getWritableDatabase();
+        //write content in database
         ContentValues contentvalues=new ContentValues();
+        contentvalues.put("Name",name);
     }
 }
