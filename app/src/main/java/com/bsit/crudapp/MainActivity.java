@@ -2,6 +2,7 @@ package com.bsit.crudapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnInsert,btnUpdate,btnDelete,btnView;
     EditText txtName,txtContact,txtDob;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,5 +19,10 @@ public class MainActivity extends AppCompatActivity {
         txtName=findViewById(R.id.name);
         txtContact=findViewById(R.id.contact);
         txtDob=findViewById(R.id.dob);
+
+        btnInsert=findViewById(R.id.insert);
+        btnInsert=findViewById(R.id.update);
+        btnInsert=findViewById(R.id.view);
+        btnInsert=findViewById(R.id.delete);
     }
 }
