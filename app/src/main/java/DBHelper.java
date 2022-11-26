@@ -29,5 +29,6 @@ public class DBHelper extends SQLiteOpenHelper
         contentvalues.put("Name",name);
         contentvalues.put("Conctact",contact);
         contentvalues.put("DOB",dob);
+        Longresult=BD.insert("crudApp",null,contentvalues);
     }
 }
