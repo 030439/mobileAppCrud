@@ -74,33 +74,11 @@ public class DBHelper extends SQLiteOpenHelper
         }
     }
     //Delete method
-    public boolean deleteData(String name,String contact,String dob){
+    public boolean updateData(String name,String contact,String dob) {
         //get database connection
-        SQLiteDatabase DB=this.getWritableDatabase();
+        SQLiteDatabase DB = this.getWritableDatabase();
 
-        //write content in database
-        ContentValues contentvalues=new ContentValues();
-
-        //assign values to content
-        //contentvalues.put("Name",name);
-        contentvalues.put("Conctact",contact);
-        contentvalues.put("DOB",dob);
-
-        //find current record into database
-        Cursor currentRecord=DB.rawQuery("SELECT * FROM crudApp WHERE Name=?",new String[]{name});
-        //check if result found
-        if(currentRecord.getCount()>0){
-            int result =DB.update("crudApp",contentvalues,"Name=?",new String[]{name});
-            if(result==-1){
-                return  false;
-            }
-            else{
-                return  true;
-            }
-        }
-        else{
-            return  false;
-        }
     }
+
 
 }
