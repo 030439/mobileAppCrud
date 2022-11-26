@@ -93,6 +93,9 @@ public class DBHelper extends SQLiteOpenHelper
     }
     //view method
     public boolean viewData(String name){
+        //get connection
+        SQLiteDatabase DB=this.getWritableDatabase();
+
 
     }
 
