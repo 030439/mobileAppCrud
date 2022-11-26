@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         btnInsert=findViewById(R.id.update);
         btnInsert=findViewById(R.id.view);
         btnInsert=findViewById(R.id.delete);
+        //Insert button
+        DBHelper DB=new DBHelper(this);
         btnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
