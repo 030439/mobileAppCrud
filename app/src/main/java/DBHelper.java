@@ -27,5 +27,7 @@ public class DBHelper extends SQLiteOpenHelper
         //write content in database
         ContentValues contentvalues=new ContentValues();
         contentvalues.put("Name",name);
+        contentvalues.put("Conctact",contact);
+        contentvalues.put("DOB",dob);
     }
 }
