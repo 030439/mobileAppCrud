@@ -61,6 +61,15 @@ public class DBHelper extends SQLiteOpenHelper
         Cursor currentRecord=DB.rawQuery("SELECT * FROM crudApp WHERE Name=?",new String[]{name});
         //check if result found
         if(currentRecord.getCount()>0){
+            int result =DB.update("crudApp",contentvalues,"Name=?",new String[]{name});
+            if(result==-1){
+                return  false;
+            }
+            else{
+                return  true;
+            }
+        }
+        else{
             return  false;
         }
     }
