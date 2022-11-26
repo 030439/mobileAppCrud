@@ -1,5 +1,6 @@
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -52,10 +53,13 @@ public class DBHelper extends SQLiteOpenHelper
         ContentValues contentvalues=new ContentValues();
 
         //assign values to content
-//        contentvalues.put("Name",name);
+        //contentvalues.put("Name",name);
         contentvalues.put("Conctact",contact);
         contentvalues.put("DOB",dob);
+
         //find current record into database
+        Cursor
+                currentRecord=DB.rawQuery("SELECT * FROM crudApp WHERE Name=?",new String[]{name});
         //execute the insert query
         Long result=DB.insert("crudApp",null,contentvalues);
         if(result==-1){
@@ -64,5 +68,7 @@ public class DBHelper extends SQLiteOpenHelper
         else{
             return  true;
         }
+
+
     }
 }
