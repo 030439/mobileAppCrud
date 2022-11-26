@@ -96,6 +96,7 @@ public class DBHelper extends SQLiteOpenHelper
         //get connection
         SQLiteDatabase DB=this.getWritableDatabase();
         Cursor findAllRecord=DB.rawQuery("SELECT * FROM crudApp",null);
+        return  findAllRecord;
     }
 
 
