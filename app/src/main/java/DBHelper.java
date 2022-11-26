@@ -74,10 +74,13 @@ public class DBHelper extends SQLiteOpenHelper
         }
     }
     //Delete method
-    public boolean updateData(String name,String contact,String dob) {
+    public boolean updateData(String name) {
         //get database connection
         SQLiteDatabase DB = this.getWritableDatabase();
-
+        Cursor currentRecord=DB.rawQuery("SELECT * FROM crudApp WHERE Name=?",new String[]{name});
+        if(currentRecord.getCount()>0){
+            int result=DB.delete("kcrudApp","Name=?",new String[]{name});
+        }
     }
 
 
