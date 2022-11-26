@@ -52,10 +52,10 @@ public class DBHelper extends SQLiteOpenHelper
         ContentValues contentvalues=new ContentValues();
 
         //assign values to content
-        contentvalues.put("Name",name);
+//        contentvalues.put("Name",name);
         contentvalues.put("Conctact",contact);
         contentvalues.put("DOB",dob);
-
+        //find current record into database
         //execute the insert query
         Long result=DB.insert("crudApp",null,contentvalues);
         if(result==-1){
