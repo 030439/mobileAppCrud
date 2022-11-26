@@ -92,12 +92,10 @@ public class DBHelper extends SQLiteOpenHelper
         }
     }
     //view method
-    public boolean viewData(){
+    public Cursor viewData(){
         //get connection
         SQLiteDatabase DB=this.getWritableDatabase();
-        Cursor findAllRecord=DB.rawQuery("SELECT * FROM crudApp");
-
-
+        Cursor findAllRecord=DB.rawQuery("SELECT * FROM crudApp",null);
     }
 
 
