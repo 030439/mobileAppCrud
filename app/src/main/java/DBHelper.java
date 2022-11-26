@@ -91,6 +91,10 @@ public class DBHelper extends SQLiteOpenHelper
             return  false;
         }
     }
+    //view method
+    public boolean viewData(String name){
+
+    }
 
 
 }
