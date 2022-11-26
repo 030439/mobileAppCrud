@@ -24,11 +24,22 @@ public class DBHelper extends SQLiteOpenHelper
     public boolean insertData(String name,String contact,String dob){
         //get database connection
         SQLiteDatabase DB=this.getWritableDatabase();
+
         //write content in database
         ContentValues contentvalues=new ContentValues();
+
+        //assign values to content
         contentvalues.put("Name",name);
         contentvalues.put("Conctact",contact);
         contentvalues.put("DOB",dob);
-        Longresult=BD.insert("crudApp",null,contentvalues);
+
+        //execute the insert query
+        Long result=DB.insert("crudApp",null,contentvalues);
+        if(result==-1){
+            return  false;
+        }
+        else{
+            return  true;
+        }
     }
 }
