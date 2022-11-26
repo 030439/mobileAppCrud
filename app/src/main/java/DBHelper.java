@@ -58,17 +58,10 @@ public class DBHelper extends SQLiteOpenHelper
         contentvalues.put("DOB",dob);
 
         //find current record into database
-        Cursor
-                currentRecord=DB.rawQuery("SELECT * FROM crudApp WHERE Name=?",new String[]{name});
-        //execute the insert query
-        Long result=DB.insert("crudApp",null,contentvalues);
-        if(result==-1){
+        Cursor currentRecord=DB.rawQuery("SELECT * FROM crudApp WHERE Name=?",new String[]{name});
+        //check if result found
+        if(currentRecord.getCount()>0){
             return  false;
         }
-        else{
-            return  true;
-        }
-
-
     }
 }
